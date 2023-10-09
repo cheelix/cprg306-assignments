@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './item'; 
-import './dist/output.css';
+ 
 
 const item1 = {
   name: "milk, 4 L 🥛",

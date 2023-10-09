@@ -1,5 +1,5 @@
 import React from 'react';
-import './dist/output.css';
+ 
 
 const Item = ({ name, quantity, category }) => {
   return (
