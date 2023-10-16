@@ -80,15 +80,15 @@ const NewItem = () => {
                   value={category} onChange={(e) => setCategory(e.target.value)}>
                   <option value="produce">Produce</option>
                   <option value="dairy">Dairy</option>
-                  <option value="dairy">Bakery</option>
-                  <option value="dairy">Meat</option>
-                  <option value="dairy">"Frozen Foods</option>
-                  <option value="dairy">"Canned Goods</option>
-                  <option value="dairy">"Dry Goods</option>
-                  <option value="dairy">"Beverages</option>
-                  <option value="dairy">"Snacks</option>
-                  <option value="dairy">"Household</option>
-                  <option value="dairy">"Other</option>
+                  <option value="Bakery">Bakery</option>
+                  <option value="Meat">Meat</option>
+                  <option value="Frozen Foods">Frozen Foods</option>
+                  <option value="Canned Goods">Canned Goods</option>
+                  <option value="Dry Goods">Dry Goods</option>
+                  <option value="Beverages">Beverages</option>
+                  <option value="Snacks">Snacks</option>
+                  <option value="Household">Household</option>
+                  <option value="Other">Other</option>
 
                 </select>
               </label>
