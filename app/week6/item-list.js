@@ -1,15 +1,19 @@
 "use client"
 import Item from './item';
 import React, { useState } from 'react';
-import itemsData from './items.json';
+ //import itemsData from './items.json';
 
 
-const ItemList = () => {
+const ItemList = ({ items  } ) => {
 
   const [sortBy, setSortBy] = useState('name');
-  const [items ] = useState(itemsData);
+
+
+
+
 
   const sortedItems = items.map(item => item).sort((a, b) => {
+
     if (sortBy === 'name') {
       return a.name.localeCompare(b.name);
     } else if (sortBy === 'category') {
@@ -17,28 +21,6 @@ const ItemList = () => {
     }
     return 0;
   });
-
-
-  // const groupAndSortByCategory = () => {
-  //   const groupedItems = items.reduce((result, item) => {
-  //     const { category } = item;
-  //     if (!result[category]) {
-  //       result[category] = [];
-  //     }
-  //     result[category].push(item);
-  //     return result;
-  //   }, {});
-
-  //   const sortedGroupedItems = Object.keys(groupedItems).sort().reduce((sortedResult, category) => {
-  //     sortedResult[category] = groupedItems[category].sort((a, b) => a.name.localeCompare(b.name));
-  //     return sortedResult;
-  //   }, {});
-
-  //   return sortedGroupedItems;
-  // };
-
-
-
 
 
 
