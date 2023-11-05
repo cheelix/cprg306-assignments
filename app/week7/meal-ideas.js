@@ -62,42 +62,43 @@ const MealIdeas = ({ ingredient }) => {
                     <li key={meal.idMeal}>
                         <button
                             onClick={() => toggleMenu(index, meal.idMeal)}
-
-
-                            className={`w-96 mb-2 p-1 text-white vp-2 w-full text-left 
-    ${activeItem === index ? 'bg-blue-500 hover:bg-blue-400' : 'bg-blue-500 hover:bg-blue-400'}
-    ${activeItem === index ? 'rounded-t-md' : 'rounded-md'} 
-    ${activeItem === index ? 'rounded-b-none' : ''}`}
-
-
+                            className={`w-96 mb-2 p-1 text-white vp-2 w-full text-left rounded-md
+                        ${activeItem === index ? 'bg-blue-500 hover:bg-blue-400' : 'bg-blue-500 hover:bg-blue-400'}
+                        ${activeItem === index ? 'rounded-t-md' : 'rounded-md'} 
+                        
+                        `}
                         >
                             {meal.strMeal}
+                            {activeItem === index && mealDetails && (
+
+
+
+                                <ul className="pl-4 text-sm font-normal text-xs text-blue-200">
+                                    <li>Ingredients needed:</li>
+                                    {Object.keys(mealDetails).map((key) => {
+                                        if (key.startsWith('strIngredient') && mealDetails[key]) {
+                                            const measureKey = `strMeasure${key.slice(13)}`;
+                                            return (
+                                                <li className="pl-4 " key={key}>
+                                                    {mealDetails[key] && mealDetails[measureKey] && (
+                                                        <span>
+                                                    {mealDetails[key]} ({mealDetails[measureKey]})
+                                                </span>
+                                                    )}
+                                                </li>
+                                            );
+                                        }
+                                        return null;
+                                    })}
+                                </ul>
+                            )}
                         </button>
-                        {activeItem === index && mealDetails && (
-                            <ul
-                                className={`pl-4 pb-2 bg-blue-500 -mt-2 mb-2  text-white rounded-b-md hover:bg-blue-400`}
-                            >
-                                {Object.keys(mealDetails).map((key) => {
-                                    if (key.startsWith('strIngredient') && mealDetails[key]) {
-                                        const measureKey = `strMeasure${key.slice(13)}`;
-                                        return (
-                                            <li key={key}>
-                                                {mealDetails[key] && mealDetails[measureKey] && (
-                                                    <span>
-                                                        {mealDetails[key]} ({mealDetails[measureKey]})
-                                                    </span>
-                                                )}
-                                            </li>
-                                        );
-                                    }
-                                    return null;
-                                })}
-                            </ul>
-                        )}
                     </li>
                 ))}
             </ul>
+
         </div>
+
     );
 };
 
