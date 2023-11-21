@@ -12,7 +12,6 @@ export default function Page() {
 
   const handleLogout = async () => {
     await firebaseSignOut();
-     
   }
 
   return (
@@ -28,7 +27,7 @@ export default function Page() {
         <div className=" rounded-xl  text-white  ">
           <p className="text-blue-500">Welcome, {user.displayName} ({user.email})</p>
           <div className="container  ">
-            <Link href="/week8/shopping-list" 
+            <Link href="/week10/shopping-list" 
             className="  text-blue-500   rounded-lg text-center   hover:underline  ">Continue to your Shopping List</Link>
             
             <button onClick={handleLogout} 

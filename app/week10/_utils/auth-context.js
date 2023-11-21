@@ -14,10 +14,14 @@ const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
  
-  const gitHubSignIn = () => {
+  const gitHubSignIn = async () => {
     const provider = new GithubAuthProvider();
-    return signInWithPopup(auth, provider);
-  };
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Error signing in with GitHub:", error);
+    }
+   };
  
   const firebaseSignOut = () => {
     return signOut(auth);

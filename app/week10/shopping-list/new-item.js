@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 
-
+import { getItems, addItem } from '../_services/shopping-list-service';
 
 const NewItem = ({ onAddItem }) => {
 
@@ -22,6 +22,7 @@ const NewItem = ({ onAddItem }) => {
     onAddItem(item);
      
   };
+
 
 
 
